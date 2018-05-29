@@ -27,7 +27,7 @@ nav .navlinks a {
   transition: background-color 0.2s;
 }
 
-nav .navlinks a:hover {
+nav .navlinks a:hover, nav .navlinks a:focus {
   background-color: #e8f5f9;
 }
 
@@ -50,8 +50,10 @@ a {
   margin-bottom: 15px;
 }
 
-.main h3 {
+.main h3, p {
   font-family: 'Lato', sans-serif;
+  max-width: 500px;
+  text-align: center;
 }
 
 .search-form {
@@ -78,3 +80,69 @@ a {
   font-family: 'Lato', sans-serif;
   font-size: 24px;
 }
+
+.text-block {
+  background-color: #ffffffAA;
+  border-radius: 2px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.text-block p {
+  margin: 12px auto;
+}
+
+.api-stack {
+  text-align: center;
+}
+
+ul.api-info {
+  font-family: 'Lato', sans-serif;
+  padding: 0px;
+}
+
+.api-info h4 {
+  margin-bottom: 5px;
+}
+
+.api-info li {
+  list-style-type: none;
+  margin: 3px 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Pretty printing styles. Used with prettify.js. */
+/* Vim sunburst theme by David Leibovic */
+
+pre .str, code .str { color: #65B042; } /* string  - green */
+pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+pre .pun, code .pun { color: #c7c7cc; } /* punctuation - grey */
+pre .pln, code .pln { color: #fff; } /* plaintext - white */
+pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+pre.prettyprint, code.prettyprint {
+	background-color: #414142;
+	border-radius: 2px;
+}
+
+code.prettyprint {
+	margin: 1em auto;
+	padding: 2px 4px;
+	white-space: pre-wrap;
+}
+
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }

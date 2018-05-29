@@ -9,13 +9,14 @@
   <body>
     <nav>
       <div class="navlinks">
-        <a href="#">Search</a>
-        <a href="#">About</a>
-        <a href="#">API</a>
-        <a href="#">GitHub</a>
+        <a id="search-link" href="#">Search</a>
+        <a id="about-link" href="#">About</a>
+        <a id="api-link" href="#">API</a>
+        <a href="https://github.com/andymond/benchscraper-api">GitHub</a>
       </div>
     </nav>
-    <section class='main'>
+
+    <section class='search main'>
       <h1>BenchScraper</h1>
       <h3>Compare your costs in one place!</h3>
 
@@ -24,5 +25,66 @@
         <input type="submit" class="main-search-button" name="search-button" value="Go!">
       </form>
     </section>
+
+    <section class='about main hidden'>
+      <h1>About</h1>
+      <div class="text-block">
+        <p>Don't have time to price compare at multiple stores before you order stock?</p>
+        <p>BenchScraper provides a simple interface for you to to see current prices across major retailers and distributors, as well as a RESTful api for developers looking to integrate pricing into their apps.</p>
+      </div>
+    </section>
+
+    <section class='API main hidden'>
+      <h1>API</h1>
+      <div class="text-block">
+        <p>
+          The BenchScraper API is a RESTful API to provide food pricing info scraped from various places on the web.
+        </p>
+
+        <p>With a super simple interface, it's easy to get started querying!</p>
+        <ul class="api-info">
+          <h4>Endpoints</h4>
+          <li><code class='prettyprint'>GET /api/v1/items</code></li>
+          <li>View all scraped items, item attributes are name, price & seller</li>
+          <li><code class='prettyprint'>GET /api/v1/items?attribute=value</code></li>
+          <li>Search for a specific item based on name, price or seller attributes</li>
+        </ul>
+
+        <ul class="api-info">
+          <h4>Setup</h4>
+          <li>Clone the repo from GitHub</li>
+          <li>Install dependencies:</li>
+          <li><code class='prettyprint'>npm install</code></li>
+          <br>
+          <li>Seed data:</li>
+          <li>
+            <a href="https://www.npmjs.com/package/node-mongo-seeds">
+              <code class='prettyprint'>npm install -g node-mongo-seeds</code>
+            </a>
+          </li>
+          <li><code class='prettyprint'>seed-setup</code> then modify the generated JSON file to match your db location</li>
+          <li><code class='prettyprint'>mongod</code> in a different shell instance</li>
+          <li><code class='prettyprint'>NODE_ENV=*your environment* seed</code></li>
+          <br>
+          <li>Start the Server:</li>
+          <li><code class='prettyprint'>MONGODB_URI=*your mongodb location* npm start</code> And query away!</li>
+        </ul>
+
+        <ul class="api-info">
+          <h4>Tests</h4>
+          <li>Run all tests with <code class='prettyprint'>npm test</code></li>
+        </ul>
+
+        <ul class="api-info api-stack">
+          <h4>Stack</h4>
+          <li><i>Node.js & Express</i></li>
+          <li><i>Mongodb & mongoose ORM</i></li>
+        </ul>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   </body>
 </html>
