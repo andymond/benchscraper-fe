@@ -23,7 +23,7 @@ function removeResults() {
 
 function noResults() {
   let searchResults = document.getElementById('populated-results')
-  searchResults.innerHTML = "<div class='api-result'> No Results Found! </div>"
+  searchResults.innerHTML = "<div class='api-result text-block'> No Results Found! </div>"
 }
 
 function addResult(result) {
@@ -39,7 +39,15 @@ function addResult(result) {
 
 searchButton.addEventListener('click', (e) => {
   e.preventDefault();
-  fetch('http://localhost:3000/api/v1/items?name=' + searchBar.value)
+  const baseURL = () => {
+    const host = window.location.hostname
+    if (host === "") {
+      return 'http://localhost:3000'
+    } else {
+      return 'https://stormy-shelf-17792.herokuapp.com'
+    }}
+
+  fetch(baseURL() + '/api/v1/items?name=' + searchBar.value)
     .then((response) => {
       removeResults()
       return response.json()
