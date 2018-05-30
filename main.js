@@ -29,9 +29,9 @@ function noResults() {
 function addResult(result) {
   let newResult = document.createElement('div');
   newResult.className = 'api-result'
-  newResult.innerHTML += "<div>" + result.name + "</div>"
-  newResult.innerHTML += "<div>" + result.price + "</div>"
-  newResult.innerHTML += "<div>" + result.seller + "</div>"
+  newResult.className += ' text-block'
+  newResult.innerHTML += "<div class='priceandseller'><span>" + result.seller + "</span>" + "<span>" + result.price + "</span></div>"
+  newResult.innerHTML += "<div class='product-name'>" + result.name + "</div>"
   let searchResults = document.getElementById('search-results')
   let popResults = document.getElementById('populated-results')
   searchResults.insertBefore(newResult, popResults.nextSibling)

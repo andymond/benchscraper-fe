@@ -53,7 +53,18 @@ nav .navlinks a:hover, nav .navlinks a:focus {
   margin: 5px;
 }
 
+.priceandseller {
+  display: flex;
+  justify-content: space-between;
+}
+
+.api-result .product-name  {
+  margin-top: 25px;
+  text-align: right;
+}
+
 .text-block {
+  font-family: 'Lato', sans-serif;
   background-color: #ffffffAA;
   border-radius: 2px;
   margin: 20px;
@@ -111,6 +122,10 @@ ul.api-info {
     padding: 10px;
   }
 
+  .api-result {
+    min-width: 320px;
+  }
+
   .hidden {
     display: none;
   }
@@ -148,6 +163,10 @@ ul.api-info {
     margin: 20px;
     font-size: 24px;
     padding: 10px;
+  }
+
+  .api-result {
+    min-width: 433px;
   }
 
   .hidden {
