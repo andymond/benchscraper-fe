@@ -1,5 +1,7 @@
 let links = document.querySelectorAll('a')
 let sections = document.querySelectorAll('section')
+let searchBar = document.querySelector('.main-search-bar')
+let searchButton = document.querySelector('.main-search-button')
 links[0].focus();
 
 links.forEach((link, i) => {
@@ -11,3 +13,47 @@ links.forEach((link, i) => {
     sections[i].classList.remove('hidden');
   });
 });
+
+function removeResults() {
+  let oldResults = document.querySelectorAll('.api-result')
+  oldResults.forEach((result) => {
+    result.remove()
+  })
+}
+
+function noResults() {
+  let searchResults = document.getElementById('populated-results')
+  searchResults.innerHTML = "<div class='api-result'> No Results Found! </div>"
+}
+
+function addResult(result) {
+  let newResult = document.createElement('div');
+  newResult.className = 'api-result'
+  newResult.innerHTML += "<div>" + result.name + "</div>"
+  newResult.innerHTML += "<div>" + result.price + "</div>"
+  newResult.innerHTML += "<div>" + result.seller + "</div>"
+  let searchResults = document.getElementById('search-results')
+  let popResults = document.getElementById('populated-results')
+  searchResults.insertBefore(newResult, popResults.nextSibling)
+};
+
+searchButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  fetch('http://localhost:3000/api/v1/items?name=' + searchBar.value)
+    .then((response) => {
+      removeResults()
+      return response.json()
+    })
+    .then((json) => {
+      if (json.length === 0) {
+        noResults()
+      } else {
+        json.forEach((result) => {
+          addResult(result)
+        })
+      }
+    })
+    .catch((e) => {
+      console.log(e)
+    })
+})

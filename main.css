@@ -1,24 +1,19 @@
-/* font-family: 'Lato', sans-serif;
-font-family: 'Righteous', cursive;
-font-family: 'PT Sans', sans-serif; */
+  /* font-family: 'Lato', sans-serif;
+  font-family: 'Righteous', cursive;
+  font-family: 'PT Sans', sans-serif; */
 
 body {
+  max-width: 100vw;
   margin: 0px;
   padding: 0px;
   background: linear-gradient(to top left, #94e9fc, #2e79db);
   min-height: 100vh;
 }
 
-nav {
-  margin: 10px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.navlinks {
-  display: flex;
-  border-radius: 2px;
-  overflow: hidden;
+a {
+  color: black;
+  font-family: 'PT Sans', sans-serif;
+  text-decoration: none;
 }
 
 nav .navlinks a {
@@ -31,28 +26,14 @@ nav .navlinks a:hover, nav .navlinks a:focus {
   background-color: #e8f5f9;
 }
 
-a {
-  color: black;
-  font-family: 'PT Sans', sans-serif;
-  text-decoration: none;
-}
-
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main h1 {
-  font-family: 'Righteous', cursive;
-  font-size: 100px;
-  margin-top: 60px;
-  margin-bottom: 15px;
-}
-
 .main h3, p {
   font-family: 'Lato', sans-serif;
-  max-width: 500px;
   text-align: center;
 }
 
@@ -62,16 +43,6 @@ a {
   align-items: center;
 }
 
-.main-search-bar {
-  width: 413px;
-  height: 25px;
-  border-style: none;
-  box-shadow: 0px 0px 60px 5px #adfdff;
-  margin: 20px;
-  font-size: 24px;
-  padding: 10px;
-}
-
 .main-search-button {
   background-color: white;
   border-radius: 1px;
@@ -79,6 +50,7 @@ a {
   box-shadow: none;
   font-family: 'Lato', sans-serif;
   font-size: 24px;
+  margin: 5px;
 }
 
 .text-block {
@@ -110,8 +82,77 @@ ul.api-info {
   margin: 3px 10px;
 }
 
-.hidden {
-  display: none;
+@media only screen and (max-width: 700px) {
+  nav {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .navlinks {
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .main h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+
+  .main-search-bar {
+    width: 80vw;
+    height: 25px;
+    border-style: none;
+    box-shadow: 0px 0px 60px 5px #adfdff;
+    margin: 40px;
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  nav {
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navlinks {
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .main h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 100px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+  }
+
+  .main h3, p {
+    max-width: 500px;
+  }
+
+  .main-search-bar {
+    width: 413px;
+    height: 25px;
+    border-style: none;
+    box-shadow: 0px 0px 60px 5px #adfdff;
+    margin: 20px;
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
 }
 
 /* Pretty printing styles. Used with prettify.js. */
@@ -130,14 +171,14 @@ pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
 
 pre.prettyprint, code.prettyprint {
-	background-color: #414142;
-	border-radius: 2px;
+  background-color: #414142;
+  border-radius: 2px;
 }
 
 code.prettyprint {
-	margin: 1em auto;
-	padding: 2px 4px;
-	white-space: pre-wrap;
+  margin: 1em auto;
+  padding: 2px 4px;
+  white-space: pre-wrap;
 }
 
 
