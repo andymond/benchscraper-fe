@@ -47,21 +47,25 @@ searchButton.addEventListener('click', (e) => {
       return 'https://stormy-shelf-17792.herokuapp.com'
     }}
 
-  fetch(baseURL() + '/api/v1/items?name=' + searchBar.value)
-    .then((response) => {
-      removeResults()
-      return response.json()
-    })
-    .then((json) => {
-      if (json.length === 0) {
-        noResults()
-      } else {
-        json.forEach((result) => {
-          addResult(result)
+    if (searchBar.value != "") {
+      fetch(baseURL() + '/api/v1/items?name=' + searchBar.value)
+        .then((response) => {
+          removeResults()
+          return response.json()
         })
-      }
-    })
-    .catch((e) => {
-      console.log(e)
-    })
+        .then((json) => {
+          if (json.length === 0) {
+            noResults()
+          } else {
+            json.forEach((result) => {
+              addResult(result)
+            })
+          }
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    } else {
+      alert("Must enter a search term!")
+    }
 })
